@@ -156,7 +156,7 @@ function Introduction() {
             </div>
             
             <div ref={imageWrapperRef} className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent rounded-3xl transform rotate-3"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-black-600/20 to-transparent rounded-3xl transform rotate-3"></div>
               <img 
                 src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80"
                 alt="AI Technology Visualization"
