@@ -53,9 +53,11 @@ import PCGameDevelopment from './pages/PCGameDevelopment';
 import ExchangeShoftware from "./pages/ExchangeShoftware";
 import InitialCoinOffering from "./pages/InitialCoinOffering";
 import CryptocurrencyApp from "./pages/CryptocurrencyApp";
-
 import CryptocurrencyWallet from "./pages/CryptocurrencyWallet";
 import SmartContractDevelopment from "./pages/SmartContractDevelopment";
+import DefiDevelopment from "./pages/DefiDevelopment";
+import Web3 from "./pages/Web3";
+import NftMarketplace from "./pages/NftMarketplace";
 
 // Frontend Technology
 
@@ -210,7 +212,7 @@ if (match?.params.path === "about-us" || match?.params.path === "contact-us") {
           path="/services/ui-ux/design-testing"
           element={<DesignTesting />}
         />
-
+         {/* Blockchain development start*/}
         <Route
           path="/services/blockchain/exchangesoftware"
           element={<ExchangeShoftware />}
@@ -233,6 +235,16 @@ if (match?.params.path === "about-us" || match?.params.path === "contact-us") {
           path="/services/blockchain/cryptocurrencywallet"
           element={<CryptocurrencyWallet />}
         />
+
+<Route path="/services/blockchain/nftmarketplacedevelopment" element={<NftMarketplace/>}/> 
+
+<Route path="/services/blockchain/defidevelopmentservices" element={<DefiDevelopment/>}/>
+
+
+<Route path="/services/blockchain/web3development" element={<Web3/>}/>
+
+{/* Blockchain development end */}
+
 
         {/* Frontend Technology */}
         <Route path="/tech/frontend/angular" element={<AngularDevelopment />} />
