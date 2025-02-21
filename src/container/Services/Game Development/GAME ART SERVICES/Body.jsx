@@ -1,9 +1,12 @@
 import React from 'react'
+import ServicesSection from './ServicesSection'
 
-export const Body = () => {
+const Body = () => {
     return (
         <div>
-           <h1>Body</h1> 
+            <ServicesSection/>
         </div>
     )
 }
+
+export default Body

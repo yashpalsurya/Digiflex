@@ -255,6 +255,22 @@ const services = [
         title: "Smart Contract",
         path: "/services/blockchain/smartcontractdevelopment",
       },
+      {
+        icon: MessageSquareLock,
+        title: "Nft Marketplace",
+        path: "/services/blockchain/nftmarketplacedevelopment",
+      },
+  
+      {
+        icon: ServerIcon,
+        title: "Defi Development Services",
+        path: "/services/blockchain/defidevelopmentservices",
+      },
+      {
+        icon: ServerIcon,
+        title: "Web3 Development",
+        path: "/services/blockchain/web3development",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
