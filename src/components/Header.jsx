@@ -693,9 +693,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center h-16 gap-x-4">
           {/* Logo */}
-          <a href="/" className="flex items-center no-underline mr-auto">
+          <Link to="/" className="flex items-center no-underline mr-auto">
             <img src={logo} alt="logo" className="h-6" />
-          </a>
+          </Link>
 
           {!isSearchActive ? (
             <>
@@ -714,12 +714,12 @@ const Navbar = () => {
                         item.hasDropdown ? handleMouseLeave : undefined
                       }
                     >
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="text-white hover:text-gray-300 transition-colors text-xs"
                       >
                         {item.label}
-                      </a>
+                      </Link>
                       {item.hasDropdown && (
                         <ChevronDown className="h-4 w-4 text-gray-400" />
                       )}
@@ -741,12 +741,12 @@ const Navbar = () => {
                 >
                   <Search className="h-5 w-5" />
                 </button>
-                <a
-                  href="/contact-us"
+                <Link
+                  to="/contact-us"
                   className="border border-blue-600 text-blue-600 px-6 py-2 hover:bg-blue-500 hover:text-white transition-colors text-sm"
                 >
                   CONTACT US
-                </a>
+                </Link>
               </div>
 
               {/* Mobile and tablet burger menu */}
@@ -843,22 +843,22 @@ const Navbar = () => {
                       )}
                     </div>
                   ) : (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="block py-2 px-4 text-white hover:bg-blue-900 transition-colors text-sm"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
               <div className="py-4 px-4">
-                <a
-                  href="/contact-us"
+                <Link
+                  to="/contact-us"
                   className="block border border-blue-600 text-blue-600 px-6 py-2 hover:bg-blue-600 hover:text-white transition-colors text-sm text-center"
                 >
                   CONTACT US
-                </a>
+                </Link>
               </div>
             </div>
           </div>
