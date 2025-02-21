@@ -62,7 +62,7 @@ const FrequentlyAskedQuestions = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-[#F9FAFB]">
       <div className="max-w-[90%] md:max-w-5xl mx-auto px-4 fade-in">
         {/* Section Heading */}
         <div className="text-center mb-8">

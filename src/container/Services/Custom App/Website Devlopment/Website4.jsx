@@ -60,7 +60,7 @@ const Card = ({ icon, title, subtitle, description, button }) => (
 
 export default function Website4() {
   return (
-    <section className="py-16 px-4 bg-gray-100">
+    <section className="py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Website Development Packages */}
         <Heading>

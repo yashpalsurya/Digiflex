@@ -4,15 +4,17 @@ import WhyChooseFlutter from '../container/Technology/MobileAppDev/FlutterAppDEv
 import OurServices from '../container/Technology/MobileAppDev/FlutterAppDEvlopment/OurServices';
 import OurTechStack from '../container/Technology/MobileAppDev/FlutterAppDEvlopment/OurTechStack'
 import IndustriesWeServe from '../container/Technology/MobileAppDev/FlutterAppDEvlopment/IndustriesWeServe'
+import WrapperContainer from '../Layout/WrapperContainer';
 const FlutterAppDevlopment = () => {
   return (
     <div>
       <HeroSection/>
+      <WrapperContainer>
       <WhyChooseFlutter/>
       <OurServices/>
       <OurTechStack/>
       <IndustriesWeServe/>
-      
+      </WrapperContainer>
     </div>
   )
 }

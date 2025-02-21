@@ -49,11 +49,11 @@ const Website = () => {
 
       {/* Additional Components */}
      <WrapperContainer>
-       <Website2 />
+      <Website2 />
       <Website3 />
       <Website4 />
       <Website5 />
-      </WrapperContainer>
+    </WrapperContainer>
     </>
   );
 };

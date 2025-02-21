@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   FaHospital, FaShoppingCart, FaTaxi, FaBook, 
   FaUniversity, FaPlane, FaBuilding, FaIndustry, 
@@ -102,54 +102,100 @@ const industries = [
 
 export default function IndustriesSection() {
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
+  const [isChanging, setIsChanging] = useState(false);
+  const [animateIcon, setAnimateIcon] = useState(false);
+
+  // Animation effect when changing selected industry
+  useEffect(() => {
+    setIsChanging(true);
+    const timer = setTimeout(() => {
+      setIsChanging(false);
+    }, 500);
+    
+    // Icon animation timer
+    setAnimateIcon(true);
+    const iconTimer = setTimeout(() => {
+      setAnimateIcon(false);
+    }, 1000);
+    
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(iconTimer);
+    };
+  }, [selectedIndustry]);
+
+  const handleIndustrySelect = (industry) => {
+    if (selectedIndustry.id !== industry.id) {
+      setSelectedIndustry(industry);
+    }
+  };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#F3F4F6] p-4">
-      <div className="flex flex-col md:flex-row w-full md:w-3/4 bg-white shadow-lg p-6 rounded-lg border border-gray-300">
+    <div className="flex justify-center items-center min-h-screen bg-blue-50 p-4">
+      <div className="flex flex-col md:flex-row w-full md:w-3/4 bg-white shadow-xl rounded-xl overflow-hidden border border-blue-200 transition-all duration-300 hover:shadow-2xl">
         {/* Sidebar */}
-        <div className="w-full md:w-1/4 bg-[#172554] text-white shadow-md p-4 rounded-lg mb-4 md:mb-0">
-          <h2 className="text-xl font-bold mb-4">Industries We Serve</h2>
-          <ul>
-            {industries.map((industry) => (
-              <li
-                key={industry.id}
-                onClick={() => setSelectedIndustry(industry)}
-                className={`flex items-center gap-2 p-2 cursor-pointer rounded-lg ${
-                  selectedIndustry.id === industry.id
-                    ? "bg-white text-[#172554]"
-                    : "hover:bg-gray-200"
-                }`}
-              >
-                {industry.icon}
-                <span className="text-sm md:text-base">{industry.name}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="w-full md:w-1/3 bg-blue-600 text-white shadow-lg">
+          <div className="sticky top-0 p-6">
+            <h2 className="text-2xl font-bold mb-6 border-b border-blue-400 pb-3">Industries We Serve</h2>
+            <ul className="space-y-1">
+              {industries.map((industry) => (
+                <li
+                  key={industry.id}
+                  onClick={() => handleIndustrySelect(industry)}
+                  className={`flex items-center gap-3 p-3 cursor-pointer rounded-lg transition-all duration-300 transform ${
+                    selectedIndustry.id === industry.id
+                      ? "bg-white text-blue-600 shadow-md translate-x-2"
+                      : "hover:bg-blue-500 text-white"
+                  }`}
+                >
+                  <div className={`text-xl ${selectedIndustry.id === industry.id && animateIcon ? "animate-pulse" : ""}`}>
+                    {industry.icon}
+                  </div>
+                  <span className="font-medium">{industry.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Content Area */}
-        <div className="w-full md:w-3/4 flex flex-col items-center justify-center p-6">
-          <img
-            src={selectedIndustry.image}
-            alt={selectedIndustry.name}
-            className="w-full md:w-1/2 rounded-lg shadow-lg mb-4 object-cover"
-          />
-          <div className="flex flex-col items-center">
-            <Heading
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-2xl font-semibold flex items-center gap-2 text-[#172554]"
-            >
-              {selectedIndustry.icon}
-              <span>{selectedIndustry.name}</span>
-            </Heading>
-            <Subheading
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-gray-700 mt-2 text-center max-w-2xl"
-            >
-              {selectedIndustry.description}
-            </Subheading>
+        <div className="w-full md:w-2/3 flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white to-blue-50">
+          <div className={`transition-opacity duration-500 ${isChanging ? "opacity-0" : "opacity-100"}`}>
+            <div className="relative mb-8 w-full">
+              <div className="absolute -inset-1 bg-blue-600 rounded-lg blur opacity-25"></div>
+              <img
+                src={selectedIndustry.image}
+                alt={selectedIndustry.name}
+                className="relative w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            
+            <div className="flex flex-col items-center transform transition-all duration-500">
+              <Heading
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl font-bold flex items-center gap-3 text-blue-600 mb-4"
+              >
+                <span className={`text-2xl ${animateIcon ? "animate-bounce" : ""}`}>
+                  {selectedIndustry.icon}
+                </span>
+                <span className="border-b-2 border-blue-600 pb-1">{selectedIndustry.name}</span>
+              </Heading>
+              
+              <Subheading
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-gray-800 mt-2 text-center max-w-2xl text-lg leading-relaxed"
+              >
+                {selectedIndustry.description}
+              </Subheading>
+              
+              <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-1">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </div>

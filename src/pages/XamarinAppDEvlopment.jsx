@@ -6,17 +6,20 @@ import WhyDigiflex from '../container/Technology/MobileAppDev/XamarinAppDevlopme
 import XamarinTechStack from '../container/Technology/MobileAppDev/XamarinAppDevlopment/XamarinTechStack'
 import IndustriesWeServe from '../container/Technology/MobileAppDev/XamarinAppDevlopment/IndustriesWeServe'
 import FrequentlyAskedQuestions from '../container/Technology/MobileAppDev/XamarinAppDevlopment/FrequentlyAskedQuestions'
+import WrapperContainer from '../Layout/WrapperContainer'
 
 const XamarinAppDEvlopment = () => {
   return (
     <div>
       <Hero/>
+      <WrapperContainer>
       <WhyChooseXamarin/>
       <XamarinAppServices/>
       <WhyDigiflex/>
       <XamarinTechStack/>
       <IndustriesWeServe/>
       <FrequentlyAskedQuestions/>
+      </WrapperContainer>
     </div>
   )
 }

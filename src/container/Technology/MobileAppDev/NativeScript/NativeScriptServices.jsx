@@ -23,7 +23,7 @@ const whyDigiflex = [
 
 export default function NativeScriptServices() {
   return (
-    <section className="py-16 bg-[#F3F4F6]">
+    <section className="py-16 bg-[#FFFFFF]">
       <div className="max-w-6xl mx-auto text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

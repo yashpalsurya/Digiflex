@@ -11,6 +11,7 @@ import IndustriesCarousel from "./Industries";
 import OurWork from "./OurWork";
 import TeamSection from "./OurTeam";
 import Recognitions from "./Recognition";
+import StandOut from "./StandOut";
 
 const MotionBentoGridItem = motion(BentoGridItem);
 

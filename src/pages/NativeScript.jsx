@@ -4,6 +4,7 @@ import NativeScriptBenefits from '../container/Technology/MobileAppDev/NativeScr
 import NativeScriptServices from '../container/Technology/MobileAppDev/NativeScript/NativeScriptServices'
 import NativeScriptProcess from '../container/Technology/MobileAppDev/NativeScript/NativeScriptProcess'
 import IndustriesSection from '../container/Technology/MobileAppDev/NativeScript/IndustriesSection'
+import WrapperContainer from '../Layout/WrapperContainer'
 
 
 const NativeScript = () => {
@@ -12,12 +13,13 @@ const NativeScript = () => {
 
       
       <Hero/>
+      <WrapperContainer>
       <NativeScriptBenefits/>
       <NativeScriptServices/>
       <NativeScriptProcess/>
       <IndustriesSection/>
       
-      
+      </WrapperContainer>
       
     </>
   )

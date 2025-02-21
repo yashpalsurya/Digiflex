@@ -32,7 +32,7 @@ const mediaLogos = [
 
 const Website2 = () => {
   return (
-    <div className="w-full bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10">
+    <div className="w-full bg-white py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-10">
       <div className="max-w-7xl mx-auto">
         
         {/* As Seen On Section */}
