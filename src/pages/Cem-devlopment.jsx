@@ -27,24 +27,32 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-30 max-w-3xl text-white px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Deliver exceptional, omnichannel customer experiences
+            🚀 Transform Customer Experience with CEM Development
           </h1>
           <p className="text-lg mb-6">
-            Deliver seamless, personalized, and omnichannel customer experiences powered by
-            cutting-edge IT solutions and innovative products. At Digiflex.ai, we ensure every
-            customer interaction is meaningful and efficient across all touchpoints.
+            Deliver seamless, personalized, and omnichannel customer experiences with our cutting-edge CEM solutions.
+            At <span className="font-semibold">Digiflex.ai</span>, we help businesses enhance customer interactions 
+            through innovative IT solutions, ensuring efficiency and engagement across all touchpoints.
           </p>
-          <button className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-            Request Demo
-          </button>
+          {/* Buttons */}
+          <div className="flex justify-center gap-4">
+            <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+              Request Demo
+            </button>
+            <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200 transition">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Additional Sections */}
       <WrapperContainer>
-      <Thirds />
-      <Four />
-      <Cards />
-      <KnowledgeSection />
-    </WrapperContainer>
+        <Thirds />
+        <Four />
+        <Cards />
+        <KnowledgeSection />
+      </WrapperContainer>
     </>
   );
 };

@@ -327,8 +327,9 @@ if (match?.params.path === "about-us" || match?.params.path === "contact-us") {
 
       </Routes>
 
-      {!match && <ReviewsSection />}
-      {!match && <Contact />}
+      {location.pathname !== "/" && <ReviewsSection />}
+      {location.pathname !== "/" && <Contact />}
+      
       <Navigation />
       <Footer />
     </div>

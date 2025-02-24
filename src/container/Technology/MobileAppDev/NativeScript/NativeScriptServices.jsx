@@ -30,7 +30,7 @@ export default function NativeScriptServices() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading className="text-3xl font-bold text-gray-800 mb-8 flex justify-center items-center gap-2">
+          <Heading>
             🛠 Our NativeScript App Development Services
           </Heading>
         </motion.div>
